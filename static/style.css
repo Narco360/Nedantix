@@ -1,0 +1,210 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #a8deaa, #f0fff4); /* Dégradé ciel à herbe */
+    background-attachment: fixed; /* Fixe le fond pour un effet de mouvement fluide */
+    background-size: cover; /* Adapte le fond à l'écran */
+    color: #333;
+    padding: 2rem;
+    line-height: 1.8;
+    overflow-x: hidden; /* Empêche les débordements horizontaux */
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    backdrop-filter: blur(5px); /* Effet de flou pour le style moderne */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation pour le container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Titre */
+h1 {
+    font-size: 3.2rem;
+    color: #22693d; /* Vert forêt foncé */
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.25); /* Ombre élégante */
+}
+
+/* Paragraphes et Textes */
+p, h2 {
+    font-size: 1.2rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: 2px solid #8fcf6a; /* Vert doux */
+    border-radius: 12px;
+    background-color: #f8fff4;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 450px;
+}
+
+input[type="text"]:focus {
+    border-color: #22693d; /* Vert forêt */
+    outline: none;
+    box-shadow: 0 0 10px rgba(34, 105, 61, 0.5); /* Effet lumineux */
+}
+
+button {
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #8fcf6a, #6da948); /* Dégradé vert herbe */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Ombre plus marquée */
+}
+
+button:hover {
+    background: linear-gradient(to right, #6da948, #528c35); /* Dégradé plus foncé */
+    transform: translateY(-4px); /* Soulèvement */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre plus intense */
+}
+
+/* Feedback */
+#feedback {
+    font-weight: bold;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+#feedback.success {
+    color: #ffffff;
+    background-color: #28a745;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite; /* Effet rebond */
+}
+
+#feedback.error {
+    color: #ffffff;
+    background-color: #dc3545;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Historique des propositions */
+#historyList {
+    margin-top: 2rem;
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#historyList li {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc translucide */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Réinitialisation du jeu */
+#resetButton {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #ff6f61, #d62e2e); /* Rouge dégradé */
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.3s;
+}
+
+#resetButton:hover {
+    background: linear-gradient(to right, #d62e2e, #b22222);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Indice */
+#hint {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #22693d, #145f2d);
+    padding: 1.2rem;
+    border-radius: 12px;
+    text-align: center;
+    display: none; /* Par défaut, caché */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet rebond */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    input[type="text"], button {
+        font-size: 1.1rem;
+    }
+}
